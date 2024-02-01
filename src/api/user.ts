@@ -8,7 +8,6 @@ export async function loginApi(formValues: FormValues) {
   const params = {
     method: "POST",
     headers: {
-      Accept: "*/*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(formValues),
@@ -21,4 +20,25 @@ export async function loginApi(formValues: FormValues) {
 
   const result = await response.json();
   return { data: result };
+}
+
+export async function getMeApi(token: string) {
+  const url = `${baseUrl}/api/auth/me/`;
+  const params = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await fetch(url, params);
+
+  if (response.status !== 200) {
+    throw {
+      status: "error",
+      message: "No se puede obtener la información del usuario",
+    };
+  }
+
+  const data = await response.json();
+
+  return { data };
 }

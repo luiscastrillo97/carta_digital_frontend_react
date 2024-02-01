@@ -1,8 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { LoginAdmin } from "../../pages/admin";
+import { useAuth } from "@/hooks";
 
 export const AdminLayout = () => {
-  const auth = null;
+  const { auth } = useAuth();
 
   if (!auth) return <LoginAdmin />;
 

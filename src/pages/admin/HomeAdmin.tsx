@@ -1,3 +1,12 @@
+import { useAuth } from "@/hooks";
+useAuth;
+
 export const HomeAdmin = () => {
-  return <div>HomeAdmin</div>;
+  const { logout } = useAuth();
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <button onClick={logout}>Cerrar sesión</button>
+    </div>
+  );
 };
