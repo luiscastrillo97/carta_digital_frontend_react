@@ -1,11 +1,24 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "semantic-ui-css/semantic.min.css";
+import "@/scss/global.scss";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/ReactToastify.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <>
     <RouterProvider router={router} />
-  </React.StrictMode>
+    <ToastContainer
+      position="bottom-center"
+      autoClose={3000}
+      hideProgressBar
+      newestOnTop
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover={false}
+    />
+  </>
 );
