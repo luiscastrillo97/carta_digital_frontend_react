@@ -1,6 +1,6 @@
 import { FormValues } from "@/utils/interfaces";
 
-const baseUrl = import.meta.env.VITE_BASE_URL; //?? "http://127.0.0.1:8000";
+const baseUrl = import.meta.env.VITE_BASE_URL ?? "http://127.0.0.1:8000";
 
 export async function loginApi(formValues: FormValues) {
   const url = `${baseUrl}/api/auth/login/`;

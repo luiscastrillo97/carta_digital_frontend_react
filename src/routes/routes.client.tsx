@@ -1,5 +1,5 @@
 import { RouteObject } from "react-router-dom";
-import { HomeClient } from "../pages/client";
+import { HomeClient } from "@/pages/client";
 
 const routesClient: RouteObject[] = [
   {
